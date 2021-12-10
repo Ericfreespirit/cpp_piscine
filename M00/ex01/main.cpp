@@ -1,24 +1,33 @@
-#include "PhoneBook.class.hpp"
+#include "Contact.hpp"
+#include "Index.hpp"
 
 int main()
 {
-	class Command cmd;
+
+	Index book;
 	std::string buff;
 
 	std::cout << "== PhoneBook ==" << std::endl;
-	while (buff.compare(0, 4, "EXIT") != 0)
+	while (1)
 	{
 		std::cout << "Command available: [ADD] [SEARCH] [EXIT]" << std::endl;
 		std::cout << "$> "; 
 		std::getline (std::cin, buff);
-		if (buff.compare(0, 3, "ADD")== 0)
-			cmd.add();
+		if (buff.compare(0, 3, "ADD") == 0)
+		{
+			if (book.add() == 1)
+				break ;
+		}
 		else if (buff.compare(0, 6, "SEARCH") == 0)
-			cmd.search();
+		{
+			if (book.search() == 1)
+				break ;
+		}
+		else if (buff.compare(0, 4, "EXIT") == 0 || std::cin.eof())
+			break ;
 		else
 			std::cout << "Error: command not found" << std::endl;
 		std::cout << std:: endl;
 	}
-	
 	return (0);
 }

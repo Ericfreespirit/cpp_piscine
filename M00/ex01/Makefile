@@ -1,15 +1,17 @@
 NAME = phone_book
 
-SRCS = *.cpp
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-INCLUDE = *.hpp
+SRCS = main.cpp Index.cpp Contact.cpp
+
+INCLUDE = Index.hpp Contact.hpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(INCLUDE)
-	clang++ $(OBJS) -o $(NAME)
+	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
 	clang++ -c $< -I .
