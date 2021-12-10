@@ -11,12 +11,15 @@ class Index
 		~Index(void);
 
 		int		add(void);
-		void	print_index()const;
+		void	print_index(void)const;
+		void	print_contact(int index)const;
 		int		search(void) const;
+		int		update();
 
 	private:
 		Contact	_contact[MAX];
 		int			_index_contact;
+		int			_replace(int index);
 
 };
 
