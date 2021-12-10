@@ -6,7 +6,7 @@
 
 
 
-Index::Index() : _index_contact(-1)
+Index::Index() : _nb_contact(-1)
 {}
 
 Index::~Index(void)
@@ -23,10 +23,11 @@ Index::~Index(void)
 int	Index::add()
 {
 	std::string str;
-	int i = this->_index_contact;
+	int i;
 	
-	if (i == -1)
-		i = 0;
+	if (this->_nb_contact == -1)
+		this->_nb_contact = 0;
+	i = this->_nb_contact;
 	if (i >= MAX)
 	{
 		std::cout << "Maximum contact reached, please update you contact." << std::endl;
@@ -62,7 +63,7 @@ int	Index::add()
 		return (1);
 	this->_contact[i].setSecret(str);
 
-	this->_index_contact++;
+	this->_nb_contact++;
 	return(0);
 }
 
@@ -79,9 +80,10 @@ int	Index::print_index() const
 	std::string str;
 	int	i = 0;
 
-	if(this->_index_contact == -1)
+	if(this->_nb_contact == -1)
 		return (1);
-	while(i < this->_index_contact)
+
+	while(i < this->_nb_contact)
 	{
 		std::cout << std::setw(10) << i << "|";
 		str = this->_contact[i].getFirstName();
@@ -98,7 +100,7 @@ int	Index::print_index() const
 			str.append(1, '.');
 		}
 		std::cout << std::setw(10) << str << "|";
-				str = this->_contact[i].getNickname();
+		str = this->_contact[i].getNickname();
 		if (str.length() > 10)
 		{
 			str.erase(9);
@@ -152,10 +154,9 @@ int	Index::search() const
 	}
 	std::cout << "Enter the index required to display phone number: ";
 	std::getline(std::cin, str);
-	std:: cout << "index: " << this->_index_contact << std::endl;
 	if (std::cin.eof())
 		return (1);
-	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) < 0 || std::stoi(str) > this->_index_contact)
+	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) < 0 || std::stoi(str) >= this->_nb_contact)
 	{
 		std::cout << "Please enter an available index" << std::endl;
 		return (0);
@@ -171,7 +172,6 @@ int	Index::search() const
 // ██║   ██║██╔═══╝ ██║  ██║██╔══██║   ██║   ██╔══╝  
 // ╚██████╔╝██║     ██████╔╝██║  ██║   ██║   ███████╗
 //  ╚═════╝ ╚═╝     ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝
-
 
 int	Index::_replace(int index)
 {
@@ -221,10 +221,10 @@ int	Index::update()
 	}
 	std::cout << "Enter the index required to update the contact: ";
 	std::getline(std::cin, str);
-	std::cout << "index: " << this->_index_contact << std::endl;
+	std::cout << "index: " << this->_nb_contact << std::endl;
 	if (std::cin.eof())
 		return (1);
-	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) < 0|| std::stoi(str) > this->_index_contact)
+	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) < 0|| std::stoi(str) > this->_nb_contact)
 	{
 		std::cout << "Please enter an available index" << std::endl;
 		return (0);

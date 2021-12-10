@@ -18,7 +18,7 @@ class Index
 
 	private:
 		Contact	_contact[MAX];
-		int			_index_contact;
+		int			_nb_contact;
 		int			_replace(int index);
 
 };

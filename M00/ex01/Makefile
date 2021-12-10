@@ -10,7 +10,7 @@ OBJS = $(SRCS:%.cpp=%.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) $(INCLUDE)
+$(NAME) :  $(INCLUDE) $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
