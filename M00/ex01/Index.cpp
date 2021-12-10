@@ -6,7 +6,7 @@
 
 
 
-Index::Index() : _index_contact(0)
+Index::Index() : _index_contact(-1)
 {}
 
 Index::~Index(void)
@@ -16,8 +16,11 @@ Index::~Index(void)
 int	Index::add()
 {
 	std::string str;
-	const int i = this->_index_contact;
+	int i = this->_index_contact;
 	
+	if (i == -1)
+		i = ++this->_index_contact;
+	std::cout << "index " << i << std::endl; 
 	if (i >= MAX)
 	{
 		std::cout << "Maximum contact reached, please update you contact." << std::endl;
@@ -58,11 +61,13 @@ int	Index::add()
 }
 
 
-void	Index::print_index() const
+int	Index::print_index() const
 {
 	std::string str;
 	int	i = 0;
 
+	if(this->_index_contact == -1)
+		return (1);
 	while(i < this->_index_contact)
 	{
 		std::cout << std::setw(10) << i << "|";
@@ -91,6 +96,7 @@ void	Index::print_index() const
 		std::cout << std::endl;
 		i++;
 	}
+	return (0);
 }
 
 void	Index::print_contact(int index) const
@@ -126,12 +132,17 @@ int	Index::search() const
 	std::string str;
 	int index;
 
-	this->print_index();
+	if(this->print_index() == 1)
+	{
+		std::cout << "PhoneBook empty" << std::endl;
+		return (0);
+	}
 	std::cout << "Enter the index required to display phone number: ";
 	std::getline(std::cin, str);
 	if (std::cin.eof())
 		return (1);
-	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) > this->_index_contact || std::stoi(str) < 0)
+	else if (str.length() > 1 || !std::isdigit(str[0]) 
+	|| std::stoi(str) > this->_index_contact || std::stoi(str) < 0)
 	{
 		std::cout << "Please enter an index between 0 and " <<   this->_index_contact << std::endl;
 		return (0);
@@ -186,11 +197,12 @@ int	Index::update()
 	this->print_index();
 	std::cout << "Enter the index required to update the contact: ";
 	std::getline(std::cin, str);
+	std::cout << "index: " << this->_index_contact << std::endl;
 	if (std::cin.eof())
 		return (1);
-	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) > this->_index_contact || std::stoi(str) < 0)
+	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) < 0|| std::stoi(str) > this->_index_contact)
 	{
-		std::cout << "Please enter an index between 0 and " <<   this->_index_contact << std::endl;
+		std::cout << "Please enter an available index" << std::endl;
 		return (0);
 	}
 	else

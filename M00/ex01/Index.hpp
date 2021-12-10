@@ -11,7 +11,7 @@ class Index
 		~Index(void);
 
 		int		add(void);
-		void	print_index(void)const;
+		int		print_index(void)const;
 		void	print_contact(int index)const;
 		int		search(void) const;
 		int		update();
