@@ -1,32 +1,21 @@
 #include <iostream>
+#include <string>
 
-char *ft_upcase(char *str)
-{
-	int i = 0;
-	
-	while(str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}	
-	return (str);
-}
 
 int main(int ac, char **av)
 {
-	int i = 0;
-
 	if (ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 	{
 		av++;
-		while(av[i])
+		while(*av)
 		{
-			std::cout << ft_upcase(av[i++]);
-			if (av[i] != NULL)
+			for(int i=0; (*av)[i];i++)
+				std::cout << (char)toupper((*av)[i]);
+			if (*av != NULL)
 				std::cout << " ";
+			av++;
 		}
 	}
 	std::cout << std::endl;

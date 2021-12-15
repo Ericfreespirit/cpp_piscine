@@ -1,6 +1,6 @@
 #include "Karen.hpp"
 
-int main()
+int main(int ac, char **av)
 {
     Karen   karen;
     karen.complain("ERROR");
