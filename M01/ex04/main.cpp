@@ -1,5 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <cstring>
+
 using namespace std;
 
 int    str_error(int ret, string text)
@@ -11,7 +14,7 @@ int    str_error(int ret, string text)
 int main (int ac, char **av)
 {
     string      filename;
-    size_t      found;
+    size_t      pos;
     ofstream    ofs;
     ifstream    ifs;
     string      line;
@@ -27,9 +30,14 @@ int main (int ac, char **av)
         return (str_error(0, "Error: fail open file"));    
     while (getline(ifs, line))
     {
-        while ((found = line.find(av[2])) != string::npos)
-            line.replace(found, ((string)av[3]).length(), av[3]);
-        ofs << line << endl;
+        while ((pos = line.find(av[2])) != string::npos)
+        {
+			ofs << line.substr(0, pos) << av[3];
+			line = line.substr(pos + strlen(av[2]));
+        }
+        if (ofs.eof())
+            break ;
+        ofs << endl;
     }
     ifs.close();    
     ofs.close();
