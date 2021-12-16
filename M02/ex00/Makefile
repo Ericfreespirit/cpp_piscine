@@ -1,18 +1,20 @@
-NAME = megaphone
+NAME = fixed
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 
 
-SRCS = megaphone.cpp
+SRCS = main.cpp Fixed.cpp
+
+INCLUDE = Fixed.hpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) :  $(INCLUDE) $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	clang++ -c $<
+	clang++ -c $< -I .
 
 clean : 
 	rm -rf $(OBJS)
