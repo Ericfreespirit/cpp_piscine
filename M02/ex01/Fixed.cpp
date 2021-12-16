@@ -6,6 +6,19 @@ _val(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
+
+Fixed::fixed(8)
+_val(0)
+{
+    std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::fixed(8)
+_val(0)
+{
+    std::cout << "Float constructor called" << std::endl;
+}
+
 Fixed::Fixed(const Fixed &fixed) :
 _val(0)
 {
@@ -34,4 +47,18 @@ int Fixed::getRawBits(void) const
 void    Fixed::setRawBits(int const raw)
 {
     this->_val = raw;
+}
+
+int     Fixed::toInt(void) const
+{
+    /*
+        convert fixed to int
+    */
+}
+
+float     Fixed::toFloat(void) const
+{
+    /*
+        convert fixed to float
+    */
 }
