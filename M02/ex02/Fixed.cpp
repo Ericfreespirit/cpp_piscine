@@ -89,13 +89,20 @@ Fixed   &Fixed::operator++(void)
     return (*this);
 }
 
-Fixed  Fixed::operator++(int)
+Fixed   &Fixed::operator--(void)
 {
-    Fixed tmp(*this);
-
-    tmp._val++;
-    return (tmp);
+    this->_val--;
+    return (*this);
 }
+
+// Fixed  Fixed::operator++(Fixed&, int)
+// {
+//     Fixed tmp(*this);
+
+//     tmp._val++;
+//     return (tmp);
+// }
+
 
 std::ostream &operator<<(std::ostream &out, Fixed &fixed)
 {

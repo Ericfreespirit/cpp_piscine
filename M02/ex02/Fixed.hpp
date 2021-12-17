@@ -31,8 +31,8 @@ public:
 
     // iterate operator
     Fixed   &operator++(); //++a
-    Fixed   operator++(int); //a++
     Fixed   &operator--(); //--a
+    Fixed   operator++(int); //a++
     Fixed   operator--(int); //a--
 
     int     getRawBits(void) const;
