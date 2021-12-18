@@ -11,23 +11,23 @@ public:
     Fixed();
     Fixed(const int i);
     Fixed(const float i);
-    Fixed( Fixed&);
+    Fixed(const Fixed&);
     ~Fixed();
     
     // compar operator
-    Fixed   &operator=(Fixed&);
-    bool    operator>(Fixed&)const;
-    bool    operator<(Fixed&)const;
-    bool    operator>=(Fixed&)const;
-    bool    operator<=(Fixed&)const;
-    bool    operator==(Fixed&)const;
-    bool    operator!=(Fixed&)const;
+    Fixed   &operator=(const Fixed&);
+    bool    operator>(const Fixed&)const;
+    bool    operator<(const Fixed&)const;
+    bool    operator>=(const Fixed&)const;
+    bool    operator<=(const Fixed&)const;
+    bool    operator==(const Fixed&)const;
+    bool    operator!=(const Fixed&)const;
 
     // arithmetic operator
-    float   operator+(Fixed&)const;
-    float   operator-(Fixed&)const;
-    float   operator*(Fixed&)const;
-    float   operator/(Fixed&)const;
+    float   operator+(const Fixed&)const;
+    float   operator-(const Fixed&)const;
+    float   operator*(const Fixed&)const;
+    float   operator/(const Fixed&)const;
 
     // iterate operator
     Fixed   &operator++(); //++a
@@ -36,13 +36,13 @@ public:
     Fixed   operator--(int); //a--
 
     int     getRawBits(void) const;
-    void    setRawBits(int const raw);
+    void    setRawBits(int const);
     int     toInt(void) const;
     float   toFloat(void) const;
-    static int     &min(int &, int &);
-    static int     &max(int &, int &);
-    //overload fixed point big
-    //overload fixed point small
+    static  Fixed    &min(Fixed&, Fixed&);
+    static  Fixed    &max(Fixed&, Fixed&);
+    const static Fixed    &min(const Fixed&, const Fixed&);
+    const static Fixed    &max(const Fixed&, const Fixed&);
 
 private:
 
@@ -50,6 +50,6 @@ private:
     static const int _bits = 8;
 };
 
-std::ostream &operator<<(std::ostream &out,Fixed &fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
