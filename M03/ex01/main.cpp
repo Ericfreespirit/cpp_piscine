@@ -4,7 +4,8 @@
 
 int main()
 {
-    // ClapTrap clap_yellow("Yellow");
     ScavTrap scav_red("Red");
+    scav_red.attack("Blue");
+    scav_red.guardGate();
     return (0);
 }

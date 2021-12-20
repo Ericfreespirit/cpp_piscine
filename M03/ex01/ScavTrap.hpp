@@ -4,13 +4,14 @@
 #include "ClapTrap.hpp"
 
 
-class ScavTrap  {
+class ScavTrap : public ClapTrap {
     
 public:
     ScavTrap(std::string name);
-    // ~ScavTrap();
+    ~ScavTrap();
     
-    // void    attack(std::string const & target);
+    void    attack(std::string const & target);
+    void    guardGate()const;
 
 };
 
