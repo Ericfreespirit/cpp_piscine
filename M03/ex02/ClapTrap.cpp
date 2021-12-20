@@ -2,10 +2,19 @@
 
 ClapTrap::ClapTrap(std::string name):
 _name(name),
-_energy(100),
-_dammage(30),
+_energy(50),
+_dammage(20),
 _hitpoints(100){
     std::cout << "Constructor ClapTrap <" << this->_name  << "> created" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &clap){
+    *this = clap;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &clap){
+    *this = clap;
+    return (*this);
 }
 
 ClapTrap::~ClapTrap(){

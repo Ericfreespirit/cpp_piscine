@@ -2,14 +2,16 @@
 #define CLAPTRAP_H
 
 #include <iostream>
-#include <string>
 
 class ClapTrap {
 
 public:
 
     ClapTrap(std::string name);
+    ClapTrap(const ClapTrap &);
     ~ClapTrap();
+
+    ClapTrap &operator=(const ClapTrap &clap);
 
     void    attack(std::string const & target);
     void    takeDamage(unsigned int amount);
