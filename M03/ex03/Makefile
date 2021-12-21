@@ -1,10 +1,10 @@
 NAME = claptrap
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
-INCLUDE = ClapTrap.hpp ScavTrap.hpp FragTrap.cpp
+INCLUDE = ClapTrap.hpp ScavTrap.hpp FragTrap.cpp DiamondTrap.hpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 

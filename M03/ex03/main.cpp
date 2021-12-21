@@ -1,12 +1,14 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 
 int main()
 {
-    FragTrap frag_eric("eric");
+    DiamondTrap diamond_eric("eric");
 
-    frag_eric.highFivesGuy();
+    diamond_eric.whoAmI();
+
     return (0);
 }

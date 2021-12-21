@@ -2,13 +2,15 @@
 #define FRAGTRAP_H
 
 #include "ClapTrap.hpp"
+
 #include <iostream>
 
-class FragTrap : public ClapTrap{
+class FragTrap : public virtual ClapTrap{
 
 public:
 
     FragTrap(std::string name);
+    FragTrap(void);
     FragTrap(const FragTrap&);
     ~FragTrap();
 

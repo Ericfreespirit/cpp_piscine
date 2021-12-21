@@ -4,7 +4,7 @@
 #include <string>
 #include <ctype.h>
 
-
+ 
 
 Index::Index() : _nb_contact(-1)
 {}
@@ -207,7 +207,7 @@ int	Index::_replace(int index)
 		return (1);
 	this->_contact[index].setSecret(str);
 	return (0);
-}
+} 
                                                   
 int	Index::update()
 {
@@ -221,7 +221,6 @@ int	Index::update()
 	}
 	std::cout << "Enter the index required to update the contact: ";
 	std::getline(std::cin, str);
-	std::cout << "index: " << this->_nb_contact << std::endl;
 	if (std::cin.eof())
 		return (1);
 	else if (str.length() > 1 || !std::isdigit(str[0]) || std::stoi(str) < 0|| std::stoi(str) > this->_nb_contact)

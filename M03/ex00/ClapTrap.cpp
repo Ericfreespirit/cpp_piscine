@@ -7,8 +7,16 @@ _dammage(0){
     std::cout << "Constructor <" << this->_name  << "> created" << std::endl;
 }
 
+ClapTrap::ClapTrap():
+_name("no_name"),
+_energy(10),
+_dammage(0){
+    std::cout << "Constructor <" << this->_name  << "> created" << std::endl;
+}
+
+
 ClapTrap::~ClapTrap(){
-    std::cout << "Constructor <" << this->_name  << "> destroyed" << std::endl;
+    std::cout << "Destructor <" << this->_name  << "> destroyed" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &clap){
@@ -16,7 +24,11 @@ ClapTrap::ClapTrap(const ClapTrap &clap){
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clap){
-    *this = clap;
+
+    this->_name = clap._name;
+    this->_energy = clap._energy;
+    this->_dammage = clap._dammage;
+
     return (*this);
 }
 

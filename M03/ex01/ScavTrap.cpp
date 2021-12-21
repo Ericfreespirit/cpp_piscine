@@ -7,13 +7,22 @@ ClapTrap(name){
     std::cout << "Constructor ScavTrap <" << this->_name  << "> created" << std::endl;
 }
 
+ScavTrap::ScavTrap():
+ClapTrap("no_name"){
+    std::cout << "Constructor ScavTrap <" << this->_name  << "> created" << std::endl;
+}
+
 ScavTrap::ScavTrap(const ScavTrap &scav) :
 ClapTrap(scav){
     *this = scav;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &scav){
-    *this = scav;
+ScavTrap &ScavTrap::operator=(const ScavTrap &ref){
+    this->_name = ref._name;
+    this->_energy = ref._energy;
+    this->_dammage = ref._dammage;
+    this->_hitpoints = ref._hitpoints;
+
     return (*this);
 }
 

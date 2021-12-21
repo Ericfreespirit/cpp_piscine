@@ -2,7 +2,7 @@
 #define INDEX_H
 #include <iostream>
 #include "Contact.hpp"
-#define MAX 1
+#define MAX 8
 
 class Index
 {
