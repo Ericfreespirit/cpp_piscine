@@ -3,7 +3,6 @@
 
 int main()
 {
-
 	Index book;
 	std::string buff;
 
