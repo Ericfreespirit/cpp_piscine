@@ -18,7 +18,7 @@ int main (int ac, char **av)
     std::string      line;
     
     if (ac != 4)
-        return(str_error(0, "Error: wrong argument, good input [filename][s1][s2]"));
+        return(str_error(0, "Error: wrong argument, need input like this -> [filename][s1][s2]"));
     if (!*av[2] || !*av[3])
         return(str_error(0, "Error: av[2] or av[3] is empty"));
     filename = ((std::string)av[1]).append(".replace");
@@ -35,6 +35,8 @@ int main (int ac, char **av)
         }
         if (ofs.eof())
             break ;
+        if (!line.empty())
+            ofs << line;
         ofs << std::endl;
     }
     ifs.close();    

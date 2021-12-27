@@ -24,6 +24,7 @@ private:
     std::string     _name;
     int             _energy;
     int             _dammage;
+    int             _hitpoints;
 };
 
 #endif

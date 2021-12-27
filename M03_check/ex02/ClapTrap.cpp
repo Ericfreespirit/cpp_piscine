@@ -2,36 +2,35 @@
 
 ClapTrap::ClapTrap(std::string name):
 _name(name),
-_energy(10),
-_dammage(0){
-    std::cout << "Constructor <" << this->_name  << "> created" << std::endl;
+_energy(30),
+_dammage(100),
+_hitpoints(100){
+    std::cout << "Constructor ClapTrap <" << this->_name  << "> created" << std::endl;
 }
 
 ClapTrap::ClapTrap():
 _name("no_name"),
-_energy(10),
-_dammage(0){
-    std::cout << "Constructor <" << this->_name  << "> created" << std::endl;
-}
-
-
-ClapTrap::~ClapTrap(){
-    std::cout << "Destructor <" << this->_name  << "> destroyed" << std::endl;
+_energy(30),
+_dammage(100),
+_hitpoints(100){
+    std::cout << "Constructor ClapTrap <" << this->_name  << "> created" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &clap){
     *this = clap;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &clap){
-
-    this->_name = clap._name;
-    this->_energy = clap._energy;
-    this->_dammage = clap._dammage;
-
+ClapTrap &ClapTrap::operator=(const ClapTrap &ref){
+    this->_name = ref._name;
+    this->_energy = ref._energy;
+    this->_dammage = ref._dammage;
+    this->_hitpoints = ref._hitpoints;
     return (*this);
 }
 
+ClapTrap::~ClapTrap(){
+    std::cout << "Destructor ClapTrap <" << this->_name  << "> destroyed" << std::endl;
+}
 
 void    ClapTrap::attack(std::string const & target){
     std::cout << "ClapTrap " << this->_name << " attack " << target << ", ";   

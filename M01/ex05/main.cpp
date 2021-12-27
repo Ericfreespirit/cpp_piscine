@@ -3,7 +3,10 @@
 int main(int ac, char **av)
 {
     Karen   karen;
+    karen.complain("DEBUG");
+    karen.complain("INFO");
+    karen.complain("WARNING");
     karen.complain("ERROR");
-    karen.complain("Error");
+    karen.complain("MERGUEZ");
     return (0);
 }
