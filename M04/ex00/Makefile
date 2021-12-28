@@ -1,10 +1,10 @@
-NAME = claptrap
+NAME = animal
 
 FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 
 
-SRCS = main.cpp Animal.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
-INCLUDE = Animal.hpp
+INCLUDE = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
