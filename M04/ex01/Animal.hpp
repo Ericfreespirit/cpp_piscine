@@ -11,14 +11,15 @@ public:
     virtual ~Animal();
 
     Animal &operator=(const Animal &ref);
+    Animal &operator=(const Animal *ptr);
 
     std::string     getType(void)const;
     virtual void    makeSound(void)const;
-    static Animal *fill_animal(int, const Animal*,const Animal*);
+    virtual void    myBrain()const;
+    static Animal   **fill_animal(int);
 
 protected:
     std::string     _type;
-
 };
 
 #endif

@@ -11,6 +11,8 @@ public:
     ~Brain();
 
     const Brain &operator=(const Brain &ref);
+    int    getIdeasLen(void)const;
+
 
 protected:
     std::string _ideas[100];

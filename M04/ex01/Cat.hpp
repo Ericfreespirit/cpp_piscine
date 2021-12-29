@@ -11,8 +11,9 @@ public:
     ~Cat();
 
     Cat &operator=(const Cat &ref);
-
     void    makeSound(void)const;
+    virtual int    getIdeasLen(void)const;
+    void    myBrain(void)const;
 
 private:
     Brain *_brain;

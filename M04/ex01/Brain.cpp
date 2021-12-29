@@ -17,3 +17,8 @@ const Brain &Brain::operator=(const Brain &ref){
     *this = ref;
     return (*this);
 }
+
+int    Brain::getIdeasLen(void)const{
+    int len = sizeof(this->_ideas) / sizeof(this->_ideas[0]);
+    return (len);
+}

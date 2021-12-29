@@ -35,3 +35,13 @@ Cat &Cat::operator=(const Cat &ref){
 void    Cat::makeSound() const{
     std::cout << "<" << this->_type << "> Miaouuuuu" << std::endl; 
 }
+
+
+void    Cat::myBrain()const{
+    std::cout << "I have a brain with "<< this->_brain->getIdeasLen()
+    << " IQ"<< std::endl;
+}
+
+int    Cat::getIdeasLen(void)const{
+    return (this->_brain->getIdeasLen());
+}

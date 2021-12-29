@@ -1,4 +1,6 @@
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 #include <iostream>
 
 /*
@@ -26,28 +28,40 @@ Animal &Animal::operator=(const Animal &ref){
     return (*this);
 }
 
+Animal &Animal::operator=(const Animal *ptr){
+    this->_type = ptr->_type;
+    return (*this);
+}
+
 /*
     Member function
 */
-std::string Animal::getType()const{
+std::string     Animal::getType()const{
     return(this->_type);
 }
 
-void         Animal::makeSound() const{
+void            Animal::makeSound() const{
     std::cout << "<" << this->_type << "> *no sound*" << std::endl; 
 }
 
-Animal *Animal::fill_animal(int n, const Animal *dog, const Animal *cat){
-   int i = 0;
-   Animal *ptr = new Animal[n];
+Animal **Animal::fill_animal(int n){
+    int i = 0;
+    Animal **arr = new Animal*[n];
 
     while (i < n)
     {
         if (i < n / 2)
-            ptr[i] = dog;
+        {
+            arr[i] = new Dog();
+        }
         else 
-            ptr[i] = cat;
+            arr[i] = new Cat();
         i++;
     }
-    return (ptr);
+    return (arr);
 }
+
+void    Animal::myBrain()const{
+    std::cout << "I don't have a brain" << std::endl;
+}
+

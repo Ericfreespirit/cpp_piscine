@@ -35,3 +35,12 @@ Dog &Dog::operator=(const Dog &ref){
 void    Dog::makeSound() const{
     std::cout << "<" << this->_type << "> Waaaaaf" << std::endl; 
 }
+
+void    Dog::myBrain()const{
+    std::cout << "I have a brain with "<< this->_brain->getIdeasLen()
+    << " IQ"<< std::endl;
+}
+
+int    Dog::getIdeasLen(void)const{
+    return (this->_brain->getIdeasLen());
+}
