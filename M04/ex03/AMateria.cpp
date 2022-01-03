@@ -13,10 +13,10 @@ AMateria::~AMateria(){};
 
 
 AMateria &AMateria::operator=(const AMateria &ref){
-    *this = ref;
     return (*this);
 }
 
-void AMateria::use(ICharacter& target){
-
+std::string const &AMateria::getType()const{
+	std:: cout << this->_type << std::endl;
+	return (this->_type);
 }

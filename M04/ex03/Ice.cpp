@@ -2,7 +2,9 @@
 #include "AMateria.hpp"
 #include <iostream>
 
-Ice::Ice(){};
+Ice::Ice(){
+	this->_type = "ice";
+};
 
 Ice::Ice(const Ice &ref){
     *this = ref;
@@ -12,18 +14,20 @@ Ice::~Ice(){};
 
 
 Ice &Ice::operator=(const Ice &ref){
-    *this = ref;
-    return (this);
+	// this->_type = ref._type;
+  return (*this);
 }
 
 AMateria* Ice::clone() const{
-    AMateria *ptr;
-    return (ptr);
+	Ice *tmp = new Ice(*this);
+	tmp->_type = this->_type;
+  return (tmp);
 }
 
 void Ice::use(ICharacter& target){
-
+	std::cout <<"hello"<< std::endl;
 }
 
-AMateria(std::string const & type);
-    std::string const &getType() const; //Returns the materia type
+std::string const &Ice::getType()const{
+	return (this->_type);
+}

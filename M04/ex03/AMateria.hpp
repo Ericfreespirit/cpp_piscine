@@ -3,6 +3,8 @@
 #include "ICharacter.hpp"
 #include <iostream>
 
+class ICharacter;
+
 class AMateria{
 public:
     AMateria();
@@ -12,11 +14,12 @@ public:
 
     AMateria &operator=(const AMateria &ref);
 
-    std::string const &getType() const; //Returns the materia type
+    virtual std::string const &getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
+    virtual void use(ICharacter& target){};
 
-// protected:
+protected:
+	std::string _type;
 
 };
 

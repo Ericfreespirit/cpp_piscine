@@ -12,6 +12,8 @@ Cat::Cat(){
 
 Cat::Cat(const Cat &ref){
     this->_type = ref._type;
+		this->_brain = new Brain;
+		*this->_brain = *(ref._brain);
     std::cout << "Copied Constructor " << this->_type << " create" << std::endl;
 }
 
@@ -25,6 +27,8 @@ Cat::~Cat(){
 */
 Cat &Cat::operator=(const Cat &ref){
     this->_type = ref._type;
+		this->_brain = new Brain;
+		*this->_brain = *(ref._brain);
     return (*this);
 }
 

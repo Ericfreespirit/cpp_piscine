@@ -3,13 +3,22 @@ NAME = materia
 FLAGS = -Wall -Wextra -Werror  -std=c++98 
 
 SRCS =	main.cpp \
-		IMateriaSource.cpp\
-		MateriaSource.cpp\
 		AMateria.cpp\
+		Character.cpp \
+		MateriaSource.cpp\
+		Ice.cpp \
+		Cure.cpp \
 
-INCLUDE =	IMateriaSource.hpp \
+
+INCLUDE =	AMateria.hpp\
+			ICharacter.hpp \
+			Character.hpp \
+			IMateriaSource.hpp \
 			MateriaSource.hpp \
-			AMateria.hpp\
+			Cure.hpp \
+			Ice.hpp \
+
+
 
 OBJS = $(SRCS:%.cpp=%.o)
 

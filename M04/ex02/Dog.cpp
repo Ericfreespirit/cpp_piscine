@@ -11,7 +11,9 @@ Dog::Dog(){
 }
 
 Dog::Dog(const Dog &ref){
-    this->_type = ref._type;
+	  this->_type = ref._type;
+		this->_brain = new Brain;
+		*this->_brain = *(ref._brain);
     std::cout << "Copied Constructor " << this->_type << " create" << std::endl;
 }
 
@@ -25,6 +27,8 @@ Dog::~Dog(){
 */
 Dog &Dog::operator=(const Dog &ref){
     this->_type = ref._type;
+		this->_brain = new Brain;
+		*this->_brain = *(ref._brain);
     return (*this);
 }
 

@@ -3,6 +3,7 @@
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 #include <iostream>
+#define MAX_SPELL 4
 
 class MateriaSource : public IMateriaSource{
 public:
@@ -14,6 +15,11 @@ public:
 
     void        learnMateria(AMateria*);
     AMateria*   createMateria(std::string const & type);
+
+private : 
+	AMateria *_arr_spell[MAX_SPELL];
+	int			_nb_spell;
+
 };
 
 #endif
