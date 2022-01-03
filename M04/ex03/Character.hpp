@@ -23,12 +23,6 @@ public:
 	private:
 		AMateria *_inventory[4];
 		int		_nb_mat;
-		void	_spell_ice(ICharacter &target)const;
-		void	_spell_cure(ICharacter &target)const;
-};
 
-typedef struct s_use{
-	std::string str;
-	void (Character::*ptr)(ICharacter &target) const;
-} t_use;
+};
 #endif
