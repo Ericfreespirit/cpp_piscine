@@ -20,3 +20,5 @@ std::string const &AMateria::getType()const{
 	std:: cout << this->_type << std::endl;
 	return (this->_type);
 }
+
+void AMateria::use(ICharacter& target){};

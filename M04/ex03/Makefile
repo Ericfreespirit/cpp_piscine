@@ -7,6 +7,8 @@ SRCS =	main.cpp \
 		Character.cpp \
 		MateriaSource.cpp\
 		Ice.cpp \
+		IMateriaSource.cpp \
+		ICharacter.cpp \
 		Cure.cpp \
 
 

@@ -54,9 +54,19 @@ void Character::equip(AMateria* m){
 		return ;
 	}
 	this->_inventory[this->_nb_mat++] = m;
-};
+}
 
-void Character::unequip(int idx){};
+void Character::unequip(int idx){
+	if (idx >= this->_nb_mat)
+		return;
+	this->_inventory[idx] = NULL;
+	while(idx < this->_nb_mat)
+	{
+		this->_inventory[idx] = this->_inventory[idx + 1];
+		this->_inventory[idx + 1] = NULL;
+		idx++;
+	}
+}
 
 
 void Character::use(int idx, ICharacter& target){
