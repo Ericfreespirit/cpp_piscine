@@ -6,6 +6,8 @@ int main()
   {
     Bureaucrat david("david", 0);
 		std::cout << david << std::endl;
+    Bureaucrat jean(david);
+		std::cout << jean << std::endl;
   }
   catch (std::exception& e)
   {
