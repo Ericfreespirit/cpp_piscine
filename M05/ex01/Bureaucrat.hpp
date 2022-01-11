@@ -17,7 +17,7 @@ class Bureaucrat{
 		int						getGrade()const;
 		void					increGrade();
 		void					decreGrade();
-		void					signForm(Form &ref);
+		void					signForm(Form &);
 
 	private:
 		std::string _name;
