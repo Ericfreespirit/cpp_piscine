@@ -1,5 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
-
+#include <fstream>
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name):
 Form(name, 145, 137),
 _name(name),
@@ -23,5 +23,45 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::action()const{
-	std::cout << "in shruberry acton" << std::endl;
+	const char draw[] = {                                                         
+  "                                            .         ;  \n"
+  "               .              .              ;%     ;;   \n"
+  "                 ,           ,                :;%  %;   \n"
+  "                  :         ;                   :;%;'     ., \n"  
+  "         ,.        %;     %;            ;        %;'    ,;\n"
+  "           ;       ;%;  %%;        ,     %;    ;%;    ,%'\n"
+  "            %;       %;%;      ,  ;       %;  ;%;   ,%;' \n"
+  "             ;%;      %;        ;%;        % ;%;  ,%;'\n"
+  "              `%;.     ;%;     %;'         `;%%;.%;'\n"
+  "               `:;%.    ;%%. %@;        %; ;@%;%'\n"
+  "                  `:%;.  :;bd%;          %;@%;'\n"
+  "                    `@%:.  :;%.         ;@@%;'   \n"
+  "                      `@%.  `;@%.      ;@@%;         \n"
+  "                        `@%%. `@%%    ;@@%;        \n"
+  "                          ;@%. :@%%  %@@%;       \n"
+  "                            %@bd%%%bd%%:;     \n"
+  "                              #@%%%%%:;;\n"
+  "                              %@@%%%::;\n"
+  "                              %@@@%(o);  . '         \n"
+  "                              %@@@o%;:(.,'         \n"
+  "                          `.. %@@@o%::;         \n"
+  "                             `)@@@o%::;         \n"
+  "                              %@@(o)::;        \n"
+  "                             .%@@@@%::;         \n"
+  "                             ;%@@@@%::;.          \n"
+  "                            ;%@@@@%%:;;;. \n"
+  "                        ...;%@@@@@%%:;;;;,.. \n"
+	};
+
+	std::ofstream ofs;
+	std::string str = this->_name + "_shrubbery";
+	ofs.open(str);
+	if (ofs.fail())
+	{
+		std::cerr << str << "file fail to open" << std::endl;
+		return ;
+	}
+	ofs << draw << std::endl;
+	ofs << draw << std::endl;
+	ofs.close();
 }

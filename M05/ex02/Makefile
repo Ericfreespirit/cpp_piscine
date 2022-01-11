@@ -6,10 +6,14 @@ SRCS =	main.cpp \
 				Bureaucrat.cpp \
 				Form.cpp \
 				ShrubberyCreationForm.cpp \
+				PresidentialPardonForm.cpp \
+				RobotomyRequestForm.cpp \
 
 INCLUDE =	Bureaucrat.hpp \
 					Form.hpp \
 					ShrubberyCreationForm.hpp \
+					PresidentialPardonForm.hpp \
+					RobotomyRequestForm.hpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
