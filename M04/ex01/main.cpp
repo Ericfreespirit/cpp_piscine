@@ -11,8 +11,13 @@ int main()
     const Animal *animal = new Animal();
     const Animal *dog = new Dog();
     const Animal *cat = new Cat();
-    const Animal *cpy_dog = dog;
-    const Animal *cpy_cat = cat;
+
+    Dog *doggy = new Dog();
+    const Animal *cpy_dog = new Dog(*doggy);
+
+    Cat *kitty = new Cat();
+    const Animal *cpy_cat = new Cat(*kitty);
+
     const WrongAnimal *wrong_cat = new WrongCat();
     Animal **arr_animal = Animal::fill_animal(N);
 
@@ -31,9 +36,9 @@ int main()
     std::cout << std::endl;
 
     std::cout << "== Deep copy Dog and Cat == " << std::endl;
-    cpy_dog->makeSound();
+    doggy->myBrain();
     cpy_dog->myBrain();
-    cpy_cat->makeSound();
+    kitty->myBrain();
     cpy_cat->myBrain();
     std::cout << std::endl;
 
@@ -49,6 +54,10 @@ int main()
         delete arr_animal[i];
     }
     delete[] arr_animal;
+    delete doggy;
+    delete kitty;
+    delete cpy_cat;
+    delete cpy_dog;
     delete animal;
     delete dog;
     delete cat;

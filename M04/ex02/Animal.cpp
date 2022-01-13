@@ -13,6 +13,7 @@ _type("Animal"){
 
 Animal::Animal(const Animal &ref):
 _type(ref._type){
+
     std::cout << "Copied Constructor " << this->_type << " create" << std::endl;
 }
 
@@ -28,10 +29,6 @@ Animal &Animal::operator=(const Animal &ref){
     return (*this);
 }
 
-Animal &Animal::operator=(const Animal *ptr){
-    this->_type = ptr->_type;
-    return (*this);
-}
 
 /*
     Member function
@@ -51,12 +48,15 @@ Animal **Animal::fill_animal(int n){
     while (i < n)
     {
         if (i < n / 2)
-        {
             arr[i] = new Dog();
-        }
         else 
             arr[i] = new Cat();
         i++;
     }
     return (arr);
 }
+
+void    Animal::myBrain()const{
+    std::cout << "I don't have a brain" << std::endl;
+}
+

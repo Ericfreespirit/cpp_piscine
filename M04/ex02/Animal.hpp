@@ -11,11 +11,10 @@ public:
     virtual ~Animal();
 
     Animal &operator=(const Animal &ref);
-    Animal &operator=(const Animal *ptr);
 
     std::string     getType(void)const;
-    virtual void    makeSound(void)const= 0;
-    virtual void    myBrain()const = 0; 
+    virtual void    makeSound(void)const = 0;
+    virtual void    myBrain()const = 0;
     static Animal   **fill_animal(int);
 
 protected:

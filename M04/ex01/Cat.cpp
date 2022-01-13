@@ -11,7 +11,7 @@ Cat::Cat(){
 }
 
 Cat::Cat(const Cat &ref){
-    this->_type = ref._type;
+    *this = ref;
     std::cout << "Copied Constructor " << this->_type << " create" << std::endl;
 }
 
@@ -25,6 +25,7 @@ Cat::~Cat(){
 */
 Cat &Cat::operator=(const Cat &ref){
     this->_type = ref._type;
+    this->_brain = new Brain();
     return (*this);
 }
 
@@ -38,7 +39,8 @@ void    Cat::makeSound() const{
 
 
 void    Cat::myBrain()const{
-    std::cout << "I have a brain with "<< this->_brain->getIdeasLen()
+    std::cout << "I have a brain(" << this->_brain
+    << ") with "<< this->_brain->getIdeasLen()
     << " IQ"<< std::endl;
 }
 

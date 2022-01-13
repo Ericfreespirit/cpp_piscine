@@ -59,7 +59,6 @@ void Character::equip(AMateria* m){
 void Character::unequip(int idx){
 	if (idx >= this->_nb_mat)
 		return;
-	this->_inventory[idx] = NULL;
 	while(idx < this->_nb_mat)
 	{
 		this->_inventory[idx] = this->_inventory[idx + 1];
@@ -70,7 +69,7 @@ void Character::unequip(int idx){
 
 
 void Character::use(int idx, ICharacter& target){
-	if (idx > this->_nb_mat)
+	if (idx >= this->_nb_mat)
 	{
 		std::cout << "index exceed the capacity of <"<< this->_name<<"> inventory";
 		std::cout << std::endl;

@@ -10,10 +10,8 @@ Dog::Dog(){
     std::cout << "Default Constructor Dog create" << std::endl;
 }
 
-Dog::Dog(const Dog &ref){
-	  this->_type = ref._type;
-		this->_brain = new Brain;
-		*this->_brain = *(ref._brain);
+Dog::Dog(const Dog &ref) {
+    *this = ref;
     std::cout << "Copied Constructor " << this->_type << " create" << std::endl;
 }
 
@@ -27,8 +25,7 @@ Dog::~Dog(){
 */
 Dog &Dog::operator=(const Dog &ref){
     this->_type = ref._type;
-		this->_brain = new Brain;
-		*this->_brain = *(ref._brain);
+    this->_brain = new Brain();
     return (*this);
 }
 
@@ -41,7 +38,8 @@ void    Dog::makeSound() const{
 }
 
 void    Dog::myBrain()const{
-    std::cout << "I have a brain with "<< this->_brain->getIdeasLen()
+    std::cout << "I have a brain(" << this->_brain
+    << ") with "<< this->_brain->getIdeasLen()
     << " IQ"<< std::endl;
 }
 
