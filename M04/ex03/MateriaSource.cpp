@@ -26,6 +26,7 @@ void MateriaSource::learnMateria(AMateria* spell){
 	if (this->_nb_spell >= MAX_SPELL)
 	{
 		std::cout << "Max spell achieve" << std::endl;
+		delete spell;
 		return ;
 	}
 	this->_arr_spell[this->_nb_spell++] = spell;

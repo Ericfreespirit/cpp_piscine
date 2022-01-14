@@ -26,8 +26,9 @@ Character::Character(const Character &ref){
 }
 
 Character::~Character(){
-	for (int i = 0; i < this->_nb_mat; i++)
-	delete _inventory[i];
+	for (int i = 0; i < this->_nb_mat; i++){
+		delete _inventory[i];
+	}
 };
 
 
@@ -49,9 +50,15 @@ std::string const &Character::getName()const{
 
 void Character::equip(AMateria* m){
 	if (this->_nb_mat >= 4 || !m)
-	{
-		std::cout << "<"<<this->_name << "> invetory is full" << std::endl;
 		return ;
+	for (int i = 0; i < this->_nb_mat; i++){
+		if (m == this->_inventory[i])
+		{
+			std::cerr << "Error: this adress[" << this->_inventory[i]
+			<< "] of materia already equiped"
+			<< std::endl;
+			return;
+		}
 	}
 	this->_inventory[this->_nb_mat++] = m;
 }
