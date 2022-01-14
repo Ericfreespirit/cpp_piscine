@@ -30,7 +30,7 @@ $(NAME) :  $(INCLUDE) $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	clang++ -c $< -I .
+	clang++ $(FLAGS) -c $< -I .
 
 clean : 
 	rm -rf $(OBJS)

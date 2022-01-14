@@ -19,6 +19,7 @@ MateriaSource::~MateriaSource(){
 
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &ref){
+	(void)ref;
     return (*this);
 }
 

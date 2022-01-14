@@ -14,6 +14,7 @@ Ice::~Ice(){};
 
 
 Ice &Ice::operator=(const Ice &ref){
+	(void)ref;
   return (*this);
 }
 

@@ -14,7 +14,7 @@ Brain::~Brain(){
 }
 
 const Brain &Brain::operator=(const Brain &ref){
-    *this = ref;
+    (void)ref;
     return (*this);
 }
 

@@ -3,7 +3,7 @@
 
 AMateria::AMateria(){}
 
-AMateria::AMateria(std::string const & type){}
+AMateria::AMateria(std::string const & type){(void)type;}
 
 AMateria::AMateria(const AMateria &ref){
     *this = ref;
@@ -13,6 +13,7 @@ AMateria::~AMateria(){};
 
 
 AMateria &AMateria::operator=(const AMateria &ref){
+    (void)ref;
     return (*this);
 }
 
@@ -21,4 +22,4 @@ std::string const &AMateria::getType()const{
 	return (this->_type);
 }
 
-void AMateria::use(ICharacter& target){};
+void AMateria::use(ICharacter& target){ (void)target;};
