@@ -13,10 +13,14 @@ int main()
 	Form* rrf = someRandomIntern.makeForm("robotomy request", "Terminator");
 	Form* ppf = someRandomIntern.makeForm("presidential pardon", "Macron");
 	Form* scf = someRandomIntern.makeForm("shrubbery creation", "Tree");
+	Form* peace = someRandomIntern.makeForm("peace", "peace");
+
 
 	std::cout << *rrf << std::endl;
 	std::cout << *ppf << std::endl;
 	std::cout << *scf << std::endl;
+	std::cout << *peace << std::endl;
+
 	delete rrf;
 	delete ppf;
 	delete scf;

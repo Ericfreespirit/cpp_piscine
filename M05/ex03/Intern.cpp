@@ -41,5 +41,6 @@ Form *Intern::makeForm(std::string fc, std::string t){
             return (this->*ptr)(t);
         }
     }
+    std::cout << "Form <" << fc << ">" << "doesn't exist" << std::endl;
     return (NULL);
 }

@@ -1,6 +1,6 @@
 NAME = materia
 
-FLAGS = -Wall -Wextra -Werror  -std=c++98 
+FLAGS = -Wall -Wextra -Werror  -std=c++98 -MMD -MP
 
 SRCS =	main.cpp \
 		AMateria.cpp\
@@ -34,6 +34,9 @@ $(NAME) :  $(INCLUDE) $(OBJS)
 
 clean : 
 	rm -rf $(OBJS)
+	rm -rf *.d
+
+-include $(OBJS:.o=.d)
 
 fclean : clean
 	rm -rf $(NAME)

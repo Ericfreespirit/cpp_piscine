@@ -5,7 +5,7 @@ class Animal {
 
 public:
     Animal();
-    // Animal(const Animal &ref);
+    Animal(const Animal &ref);
     virtual ~Animal();
 
     Animal &operator=(const Animal &ref);
