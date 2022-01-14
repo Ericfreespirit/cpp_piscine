@@ -14,14 +14,12 @@ Ice::~Ice(){};
 
 
 Ice &Ice::operator=(const Ice &ref){
-	// this->_type = ref._type;
   return (*this);
 }
 
 AMateria* Ice::clone() const{
 	Ice *tmp = new Ice(*this);
-	tmp->_type = this->_type;
-  return (tmp);
+	return (tmp);
 }
 
 void Ice::use(ICharacter& target){

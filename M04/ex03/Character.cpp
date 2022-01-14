@@ -6,22 +6,12 @@
 #include <iostream>
 
 Character::Character(std:: string name): 
-ICharacter(),
+// ICharacter(),
 _nb_mat(0){
 	this->_name = name;
-		for (int i = 0; i < 4; i++)
-		this->_inventory[i] = NULL;
 }
 
 Character::Character(const Character &ref){
-	for (int i = 0; i < ref._nb_mat; i++)
-	{
-		if (ref._inventory[i]->getType() == "ice")
-			_inventory[i] = new Ice();
-		else if (ref._inventory[i]->getType() == "cure")
-			_inventory[i] = new Cure();
-	}
-	this->_nb_mat = ref._nb_mat;
   *this = ref;
 }
 
@@ -64,14 +54,20 @@ void Character::equip(AMateria* m){
 }
 
 void Character::unequip(int idx){
+
 	if (idx >= this->_nb_mat)
 		return;
+	// this->_nb_mat--;
 	while(idx < this->_nb_mat)
 	{
 		this->_inventory[idx] = this->_inventory[idx + 1];
-		this->_inventory[idx + 1] = NULL;
 		idx++;
 	}
+	std::cout <<"idx: "<< idx<< std::endl;
+	std::cout <<"nb_mat: "<< this->_nb_mat<< std::endl;
+	this->_inventory[idx] = (AMateria *)55;
+	std::cout << "Size: " << sizeof(AMateria*) << std::endl;
+	std::cout <<"nb_mat: "<< this->_nb_mat << " ptr: " << &this->_inventory[0] << " ptr nb_mat: " << &this->_nb_mat << std::endl;
 }
 
 
@@ -85,3 +81,5 @@ void Character::use(int idx, ICharacter& target){
 	this->_inventory[idx]->use(target);
 }
 
+
+int		Character::getNbmat()const{return(this->_nb_mat);}
