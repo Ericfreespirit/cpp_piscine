@@ -41,15 +41,6 @@ int main()
     me->use(3, *bob);
     me->use(4, *bob);
 
-    std::cout << "== Unequip ==" << std::endl;
-    me->unequip(0);
-    // me->use(0, *bob);
-    // me->use(1, *bob);
-    // me->use(2, *bob);
-    // me->use(3, *bob);
-
-
-
     delete bob;
     delete me;
     delete src;

@@ -57,17 +57,13 @@ void Character::unequip(int idx){
 
 	if (idx >= this->_nb_mat)
 		return;
-	// this->_nb_mat--;
+	this->_nb_mat--;
 	while(idx < this->_nb_mat)
 	{
 		this->_inventory[idx] = this->_inventory[idx + 1];
 		idx++;
 	}
-	std::cout <<"idx: "<< idx<< std::endl;
-	std::cout <<"nb_mat: "<< this->_nb_mat<< std::endl;
-	this->_inventory[idx] = (AMateria *)55;
-	std::cout << "Size: " << sizeof(AMateria*) << std::endl;
-	std::cout <<"nb_mat: "<< this->_nb_mat << " ptr: " << &this->_inventory[0] << " ptr nb_mat: " << &this->_nb_mat << std::endl;
+	this->_inventory[idx] = NULL;
 }
 
 
