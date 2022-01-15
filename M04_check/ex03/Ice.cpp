@@ -7,6 +7,7 @@ Ice::Ice(){
 };
 
 Ice::Ice(const Ice &ref){
+	this->_type = "ice";
     *this = ref;
 }
 

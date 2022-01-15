@@ -1,6 +1,6 @@
 NAME = materia
 
-FLAGS = -Wall -Wextra -Werror  -std=c++98 -MMD -MP
+FLAGS = -Wall -Wextra -Werror  -std=c++98 -MMD -MP -g3 -fsanitize=address
 
 SRCS =	main.cpp \
 		AMateria.cpp\

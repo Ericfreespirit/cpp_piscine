@@ -9,15 +9,24 @@ Character::Character(std:: string name):
 // ICharacter(),
 _nb_mat(0){
 	this->_name = name;
+	for (int i = 0; i < 4; i++){
+		this->_inventory[i] = NULL;
+	}
 }
 
 Character::Character(const Character &ref){
-  *this = ref;
+	for (int i = 0; i < 4; i++){
+		this->_inventory[i] = NULL;
+	}
+	this->_nb_mat = 0;
+	*this = ref;
 }
 
 Character::~Character(){
+
 	for (int i = 0; i < this->_nb_mat; i++){
-		delete _inventory[i];
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 	}
 };
 
@@ -25,12 +34,19 @@ Character::~Character(){
 Character &Character::operator=(const Character &ref){
 	for (int i = 0; i < ref._nb_mat; i++)
 	{
+		if (this->_inventory[i] != NULL)
+		{
+			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
 		if (ref._inventory[i]->getType() == "ice")
-			_inventory[i] = new Ice();
+			this->_inventory[i] = new Ice();
 		else if (ref._inventory[i]->getType() == "cure")
-			_inventory[i] = new Cure();
-	}	this->_nb_mat = ref._nb_mat;
-  return (*this);
+			this->_inventory[i] = new Cure();
+	}
+	this->_nb_mat = ref._nb_mat;
+	this->_name = ref._name;
+	return (*this);
 }
 
 std::string const &Character::getName()const{

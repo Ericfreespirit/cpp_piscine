@@ -7,6 +7,7 @@ Cure::Cure(){
 };
 
 Cure::Cure(const Cure &ref){
+	this->_type = "cure";
     *this = ref;
 }
 
