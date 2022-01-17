@@ -8,41 +8,41 @@
 
 int main()
 {
-    // std::cout << std::endl;
-    // std::cout << "== TEST per default ==" << std::endl;
-    // std::cout << std::endl;
-    // IMateriaSource *src = new MateriaSource();
-    // src->learnMateria(new Ice());
-    // src->learnMateria(new Cure());
-    // src->learnMateria(new Cure());
-    // src->learnMateria(new Cure());
-    // src->learnMateria(new Cure());
+    std::cout << std::endl;
+    std::cout << "== TEST per default ==" << std::endl;
+    std::cout << std::endl;
+    IMateriaSource *src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
 
-    // ICharacter* me = new Character("me");
+    ICharacter* me = new Character("me");
     AMateria* tmp;
-    // AMateria* tmp2;
+    AMateria* tmp2;
 
-    // tmp2 = src->createMateria("ice");
-    // me->equip(tmp2);
-    // tmp = src->createMateria("cure");
-    // me->equip(tmp);
-    // me->equip(tmp);
-    // tmp = src->createMateria("cure");
-    // me->equip(tmp);
-    // tmp = src->createMateria("cure");
-    // me->equip(tmp);
+    tmp2 = src->createMateria("ice");
+    me->equip(tmp2);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
 
-    // ICharacter* bob = new Character("bob");
-    // me->use(0, *bob);
-    // me->use(1, *bob);
-    // me->use(2, *bob);
-    // me->use(3, *bob);
-    // me->use(4, *bob);
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
+    me->use(2, *bob);
+    me->use(3, *bob);
+    me->use(4, *bob);
 
-    // me->unequip(0);
-    // me->use(0, *bob);
-    // me->use(1, *bob);
-    // me->use(2, *bob);
+    me->unequip(0);
+    me->use(0, *bob);
+    me->use(1, *bob);
+    me->use(2, *bob);
 
     std::cout << std::endl;
     std::cout << "== TEST deep copy Character ==" << std::endl;
@@ -61,7 +61,7 @@ int main()
     leo->use(1, *leo);
 
     Character *tom = new Character(*leo);
-    leo = tom;
+    *leo = *tom;
     tom->use(0, *tom);
     tom->use(1, *tom);
     leo->use(0, *leo);
@@ -69,9 +69,9 @@ int main()
     delete tom;
     delete leo;
     delete src2;
-    // delete tmp2;
-    // delete bob;
-    // delete me;
-    // delete src;
+    delete tmp2;
+    delete bob;
+    delete me;
+    delete src;
     return (0);
 }

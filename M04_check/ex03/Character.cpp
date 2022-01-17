@@ -46,6 +46,7 @@ Character &Character::operator=(const Character &ref){
 	}
 	this->_nb_mat = ref._nb_mat;
 	this->_name = ref._name;
+
 	return (*this);
 }
 
