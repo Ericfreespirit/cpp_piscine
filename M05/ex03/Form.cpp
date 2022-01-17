@@ -31,11 +31,16 @@ Form &Form::operator=(const Form &ref){
 	return (*this);
 }
 
-std::ostream &operator<<(std::ostream &os, Form &ref){
-	os << "<" << ref.getName() << "> form" << std::endl;
-	os << "<"<< ref.getGradeExec() << "> grade exec| <" 
-	<< ref.getGradeSign() << "> grade sign" << std::endl;
-	os << "<" << ref.getSign() << ">> sign";
+std::ostream &operator<<(std::ostream &os, Form *ptr){
+	if (ptr == NULL)
+	{
+		os << "Form doesn't exist";
+		return (os);
+	}
+	os << "<" << ptr->getName() << "> form" << std::endl;
+	os << "<"<< ptr->getGradeExec() << "> grade exec| <" 
+	<< ptr->getGradeSign() << "> grade sign" << std::endl;
+	os << "<" << ptr->getSign() << ">> sign";
 	return (os);
 }
 

@@ -16,13 +16,14 @@ int main()
 	Form* peace = someRandomIntern.makeForm("peace", "peace");
 
 
-	std::cout << *rrf << std::endl;
-	std::cout << *ppf << std::endl;
-	std::cout << *scf << std::endl;
-	std::cout << *peace << std::endl;
+	std::cout << rrf << std::endl;
+	std::cout << ppf << std::endl;
+	std::cout << scf << std::endl;
+	std::cout << peace << std::endl;
 
 	delete rrf;
 	delete ppf;
 	delete scf;
+	delete peace;
 	return (0);
 }

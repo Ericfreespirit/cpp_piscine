@@ -53,9 +53,8 @@ void ShrubberyCreationForm::action()const{
   "                        ...;%@@@@@%%:;;;;,.. \n"
 	};
 
-	std::ofstream ofs;
 	std::string str = this->_name + "_shrubbery";
-	ofs.open(str);
+	std::ofstream ofs(&str[0]);
 	if (ofs.fail())
 	{
 		std::cerr << str << "file fail to open" << std::endl;

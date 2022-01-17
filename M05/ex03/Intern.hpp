@@ -12,7 +12,6 @@ public:
     Form *createPre(std::string target);
     Form *createRob(std::string target);
     Form *createShr(std::string target);
-    void test(void){};
 
 };
 

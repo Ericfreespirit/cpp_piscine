@@ -50,5 +50,5 @@ public :
 		};
 };
 
-std::ostream &operator<<(std::ostream &os, Form &ref);
+std::ostream &operator<<(std::ostream &os, Form *ptr);
 #endif

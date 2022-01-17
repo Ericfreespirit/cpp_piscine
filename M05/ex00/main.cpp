@@ -2,6 +2,9 @@
 
 int main()
 {
+
+  std::cout << "== TEST 1 ==" << std::endl;
+  std::cout << std::endl;
   try
   {
     Bureaucrat david("david", 0);
@@ -14,6 +17,9 @@ int main()
     std::cerr << e.what() << std::endl;
   }
 
+  std::cout << std::endl;
+  std::cout << "== TEST 2 ==" << std::endl;
+  std::cout << std::endl;
 	try
   {
     Bureaucrat david("david", 151);
@@ -24,6 +30,9 @@ int main()
     std::cerr << e.what() << std::endl;
   }
 
+  std::cout << std::endl;
+  std::cout << "== TEST 3 ==" << std::endl;
+  std::cout << std::endl;
 	try
   {
     Bureaucrat david("david", 42);
@@ -38,6 +47,9 @@ int main()
     std::cerr << e.what() << std::endl;
   }
 
+  std::cout << std::endl;
+  std::cout << "== TEST 4 ==" << std::endl;
+  std::cout << std::endl;
 	try
   {
     Bureaucrat david("david", 1);
@@ -50,7 +62,10 @@ int main()
   {
     std::cerr << e.what() << std::endl;
   }
-
+  
+  std::cout << std::endl;
+  std::cout << "== TEST 5 ==" << std::endl;
+  std::cout << std::endl;
 	try
   {
     Bureaucrat david("david", 150);

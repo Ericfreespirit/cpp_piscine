@@ -1,4 +1,6 @@
 #include "RobotomyRequestForm.hpp"
+#include <stdlib.h>     
+#include <time.h>
 RobotomyRequestForm::RobotomyRequestForm(const std::string &name):
 Form(name, 72, 45),
 _name(name),
