@@ -1,14 +1,24 @@
 NAME = convert
 
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -MMD -MP
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
-SRCS =	main.cpp 
+SRCS =	main.cpp \
+		Base.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp \
+
+
+INCLUDE = 	Base.hpp \
+			A.hpp \
+			B.hpp \
+			C.hpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
 all : $(NAME)
 
-$(NAME) :  $(OBJS)
+$(NAME) :  $(INCLUDE) $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
@@ -17,9 +27,6 @@ $(NAME) :  $(OBJS)
 
 clean :
 	rm -rf $(OBJS)
-	rm -rf *.d
-
--include $(OBJS:.o=.d)
 
 fclean : clean
 	rm -rf $(NAME)
