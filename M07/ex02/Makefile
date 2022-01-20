@@ -1,6 +1,6 @@
 NAME = array
 
-FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -MMD -MP
+FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -MMD -MP -g3
 
 SRCS =	main.cpp 
 
