@@ -13,7 +13,7 @@ int main()
         std::cout << "arr: {" << my_intArr[0]<< "}" << std::endl;
         std::cout << "arr: {" << &my_intArr[9]<< "}" << std::endl;
         std::cout << "arr: {" << my_intArr[9]<< "}" << std::endl;
-        std::cout << my_intArr[10];
+        std::cout << my_intArr[100];
     }
     catch (std::exception &e){
         std::cerr << e.what() << std::endl;
