@@ -38,6 +38,7 @@ Form *Intern::makeForm(std::string fc, std::string t){
         if (tab[i].fc_name == fc)
         {
             ptr = tab[i].ptr;
+						std::cout << "Intern creates <" << tab[i].fc_name << ">"<< std::endl;
             return (this->*ptr)(t);
         }
     }
