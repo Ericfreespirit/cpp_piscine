@@ -17,30 +17,32 @@ int main(int ac, char **av)
     }
     double convert = atof(av[1]);
 
+		// Char converion
     std::cout << "char: ";
-    if (std::strcmp(av[1], "nan") == 0 ||std::strcmp(av[1], "nanf") == 0 ||
-        convert > CHAR_MAX || convert < CHAR_MIN)
+    if (convert > CHAR_MAX || convert < CHAR_MIN || !std::isfinite(convert)) // std::isfinite
         std::cout << "impossible" << std::endl;
     else if (convert < 33 || convert > 127)
         std::cout << "Non displayable" << std::endl;
     else
         std::cout << "'"<< static_cast<char>(convert) <<"'" << std::endl;
-    
+		
+		// Int converion
     std::cout <<"int: ";
-    if (std::strcmp(av[1], "nan") == 0 ||std::strcmp(av[1], "nanf") == 0 || 
-        convert > INT_MAX || convert < INT_MIN)
+    if (convert > INT_MAX || convert < INT_MIN || !std::isfinite(convert)) // std::isfinite
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<int>(convert) << std::endl;
 
+		// Float converion
     std::cout <<"float: ";
-    if (std::strcmp(av[1], "nan") == 0 ||std::strcmp(av[1], "nanf") == 0 )
+    if (!std::isfinite(convert))
         std::cout << "nanf" << std::endl;
     else
         std::cout << std::fixed << std::setprecision(1)<<static_cast<float>(convert) <<"f"<< std::endl;
 
+		//Double conversion
     std::cout <<"double: ";
-    if (std::strcmp(av[1], "nan") == 0 ||std::strcmp(av[1], "nanf") == 0 )
+    if (!std::isfinite(convert))
         std::cout << "nan" << std::endl;
     else
         std::cout << convert << std::endl;
