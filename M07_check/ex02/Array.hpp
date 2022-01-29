@@ -13,6 +13,13 @@ public:
             return ("index too high compared to array size");
         };
     };
+public:
+    class IndexNeg : public std::exception {
+        public:
+        const char *what() const throw(){
+            return ("index can't be negative");
+        };
+    };
 
 public:
 
@@ -44,6 +51,8 @@ public:
     T &operator[](int index){
         if (index + 1 > size())
             throw Array<T>::IndexTooHigh();
+				else if (index < 0)
+            throw Array<T>::IndexNeg();
         return (this->_arr[index]);
     };
 

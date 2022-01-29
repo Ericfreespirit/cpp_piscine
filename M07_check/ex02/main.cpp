@@ -16,7 +16,7 @@ int main()
         std::cout << my_intArr[100];
     }
     catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
+        std::cerr << "Error: "<< e.what() << std::endl;
     }
 
     std::cout << std::endl;
@@ -28,9 +28,11 @@ int main()
         std::cout << "arr: {"<< static_cast<void*> (&my_charArr[1]) << "}" << std::endl;
         std::cout << "arr: {"<< my_charArr[1] << "}" << std::endl;        
         std::cout << my_charArr[3];
+        std::cout << my_charArr[-1];
+        std::cout << my_charArr[-100];
     }
     catch (std::exception &e){
-        std::cerr << e.what() << std::endl;
+        std::cerr << "Error: "<< e.what() << std::endl;
     }
     
     return (0);
