@@ -14,7 +14,7 @@ int main()
         std::cout << easyfind(vect, 666) << std::endl;
     }
     catch (std::invalid_argument &e){
-        std::cerr << e.what() << std::endl;
+        std::cerr <<"Error: " <<e.what() << std::endl;
     }
     return (0);
 }

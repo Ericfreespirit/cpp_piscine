@@ -32,9 +32,9 @@ void Span::addNumber(unsigned int n){
 
 unsigned int Span::shortestSpan(){
     std::vector<unsigned int> v2;
-    unsigned int tmp = *max_element(this->_v.begin(), this->_v.end());
     if (this->_v.empty() || this->_v.size() == 1)
         throw std::runtime_error("Error: vector wrong size");
+    unsigned int tmp = *max_element(this->_v.begin(), this->_v.end());
     for(size_t i = 0;i < this->_v.size(); i++){
         v2.push_back(this->_v[i]);
     }

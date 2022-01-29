@@ -3,7 +3,9 @@
 int main()
 {
     Span sp(5);
-    Span sp2(2000);
+    Span sp2(15000);
+    Span sp3(0);
+
 
     std::cout <<" == Test 1 ==" <<std::endl;
     try {
@@ -23,6 +25,14 @@ int main()
         sp2.addRandNb();
         std::cout << sp2.shortestSpan() << std::endl;
         std::cout << sp2.longestSpan() << std::endl;
+    }
+    catch (std::exception &e){
+        std::cerr << e.what() << std::endl;
+    }
+		std::cout <<" == Test 3 ==" <<std::endl;
+    try {
+        std::cout << sp3.shortestSpan() << std::endl;
+        std::cout << sp3.longestSpan() << std::endl;
     }
     catch (std::exception &e){
         std::cerr << e.what() << std::endl;
